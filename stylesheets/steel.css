@@ -11,6 +11,9 @@ header {
 header ul{
   list-style-type: none;
 }
+header il{
+  display: inline;
+}
 
 header h1 {
   width: 540px;
