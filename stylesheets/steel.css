@@ -11,7 +11,7 @@ header {
 header ul{
   list-style-type: none;
 }
-header il{
+header li{
   display: inline;
 }
 
