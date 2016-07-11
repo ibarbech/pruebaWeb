@@ -352,11 +352,11 @@ Example specificworker.py:
 		#
 		@QtCore.Slot()
 		def fun_test1(self):
-			self.test1totest1.emit
 			pass
 
 		#
-		# fun_test6	#
+		# fun_test6	
+		#
 		@QtCore.Slot()
 		def fun_test6(self)
 			pass
@@ -424,8 +424,9 @@ Example specificworker.py:
 		def fun_test5sub2(self):
 			pass
 
+Emit Signal
+===========
 
+For realice a transition between states we has emit the corresponding signal. The signal is emit as follows:
 
-
-
-
+	self.statesrctostatedst.emit
