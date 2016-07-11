@@ -31,6 +31,8 @@ Example
 
 *	**genericworker.py**
 
+Example genericworker.py:
+
 	#
 	# Copyright (C) 2016 by YOUR NAME HERE
 	#
@@ -257,6 +259,8 @@ Example
 
 *	**specificworker.py**
 
+Example specificworker.py:
+
 	#
 	# Copyright (C) 2016 by YOUR NAME HERE
 	#
@@ -421,7 +425,7 @@ Example
 			pass
 
 
-	#-------------------------
+
 
 
 
