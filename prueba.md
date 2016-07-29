@@ -131,6 +131,82 @@ Now, to the left show the motors found.
 
 If appear all motors that we connect, the conecction is correct.
 
+#####Install Pressure sensors
 
+Each leg will have a pressure sensor, these sensors will connect to a Arduino. On This Arduino will have loaded the program "sensorPresion.ino" 
 
+* The sensor of leg 1 will connect to pin A0.
+
+* The sensor of leg 2 will connect to pin A1.
+
+* The sensor of leg 3 will connect to pin A2.
+
+* The sensor of leg 4 will connect to pin A3.
+
+* The sensor of leg 5 will connect to pin A4.
+
+* The sensor of leg 6 will connect to pin A5.
+
+![pressure sensor](img/pressure_sensor.jpg)
+
+![pressure sensor install](img/pressure_sensor_install.jpg)
+
+#####Install IMU
+
+For to check the orientation the hexapod we will install the adapter IMU, that it is connected to the odroid.
+
+![IMU](img/IMU.jpg)
+
+#####Run the components in Odroid
+
+######dynamixelphython
+
+For run the componet dynamixelpython we will follow the next steps:
+
+* We will move to directory "<use-name>/hexapod-robot/dynamixelpython":
+
+	$ cd <use-name>/hexapod-robot/dynamixelpython
+
+* Execute these two line:
+
+	$ cmake .
+	$ make -j2
+
+* Execute the next line:
+
+	$ src/dynamixelpython etc/config
+
+######footpreassuresensor
+
+For run the componet footpreassuresensor we will follow the next steps:
+
+* We will move to directory "<use-name>/hexapod-robot/footpreassuresensor":
+
+	$ cd <use-name>/hexapod-robot/footpreassuresensor
+
+* Execute these two line:
+
+	$ cmake .
+	$ make -j2
+
+* Execute the next line:
+
+	$ bin/FootPreassureSensor etc/config
+
+######phidgetimu
+
+For run the componet footpreassuresensor we will follow the next steps:
+
+* We will move to directory "home/robocomp/robocomp/components/robocomp-robolab/components/phidgetimu/":
+
+	$ cd home/robocomp/robocomp/components/robocomp-robolab/components/phidgetimu/
+
+* Execute these two line:
+
+	$ cmake .
+	$ make -j2
+
+* Execute the next line:
+
+	$ sudo bin/phidgetimu etc/config
 
