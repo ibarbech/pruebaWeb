@@ -93,34 +93,44 @@ You can check that PyDynamixel is installed writting this commands:
 
 We’ll know if all it’s ok if we don’t see any kind of error.
 
-#####Creating Component
+#####Clone repository hexapod-robot
 
-Once we get installed pydynamixel we are going to create the component that we will use to implement JointMotor interface.
+Once we get installed dynamixel and robocomp, we'll clone this repository, for that we can control the dynamixel motors and for that we can read pressure sensors.
 
-We need to have installed Robocomp to make the component in an easy way. 
+	https://github.com/ibarbech/hexapod-robot.git
 
-Steps:
+For the communication between odroid and  the dynamixel motor we need the adapter usb2dynamixel.
 
-- In the terminal we write:
+![usb2dynamixel](img/usb2dynamixel.jpg)
 
-	$ robocompcdsl DynamixelComponent
+#####Connect the Dynamixel motors to odroid
 
-- We open the file with an editor and we have to include the JointMotor interface, located in robocomp/files/interfaces/ We write the name of our component which implements, no requires, JointMotor. We have installed pydynamixel, a python library, so our component will be code in python. To do this, we only have to modify the language tag. If we don’t need an UI, we could delete the line implements Qt.
+Phantom-x use the motors model AX-12 by Dynamixel and these motors use the ttl communications. For its connect we'll follow the next steps:
 
-- Once we have modify the file, we have to write in the terminal:
+* Connect the motors as a bus.
 
-	$ robocompcdsl DynamixelComponent .
+* Connect VCC 12V.
 
-This process will be take some time.
+* Connect a this bus the adapter usb2dynamixel.
 
-- The component will be over, when we’ll gain access to the terminal .
+* Connect the adapter to odroid and we set position the connection switch in TTL.
 
-#####How should you use this component?
+If we want to check the connection the Dynamixel motors, we can to download the program RoboPlusWeb(v1.1.3.0).exe and install in Windows following the next steps:
 
-Our component implements JointMotor so it has all methods and functions described in the interface. This interfaces is located in /robocomp/files/interfaces and you could see how works if you see our component.
+* Install de program.
 
-The first thing you should do if you want to use it will be requires it when you are creating your component. In the part where the component is requiring or implementing other components, you have to requires JointMotor, and import the correspondent idsl.
+* Run de program and select Expert and Dynamixel Wizard.
 
-Once you are writing you code, you only have to call the proxy and use its methods, like setSyncPosition or GetAllMotorState.
+* Connect Usb2Dynamixel to Windows pc.
 
-The component’s timer is set in 100 milliseconds and in every iteration will read the state of each motor in hexapod.
+* Select port and click connect.
+
+* Select bps of search and click Search Start.
+
+Now, to the left show the motors found.
+
+If appear all motors that we connect, the conecction is correct.
+
+
+
+
