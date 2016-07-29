@@ -102,12 +102,17 @@ We need to have installed Robocomp to make the component in an easy way.
 Steps:
 
 - In the terminal we write:
+
 	$ robocompcdsl DynamixelComponent
+
 - We open the file with an editor and we have to include the JointMotor interface, located in robocomp/files/interfaces/ We write the name of our component which implements, no requires, JointMotor. We have installed pydynamixel, a python library, so our component will be code in python. To do this, we only have to modify the language tag. If we don’t need an UI, we could delete the line implements Qt.
 
 - Once we have modify the file, we have to write in the terminal:
+
 	$ robocompcdsl DynamixelComponent .
+
 This process will be take some time.
+
 - The component will be over, when we’ll gain access to the terminal .
 
 #####How should you use this component?
